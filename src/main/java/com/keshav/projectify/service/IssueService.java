@@ -1,33 +1,24 @@
 package com.keshav.projectify.service;
 
 import com.keshav.projectify.modal.Issue;
+import com.keshav.projectify.modal.User;
+import com.keshav.projectify.request.IssueRequest;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface IssueService {
 
-    Optional<Issue> getIssueById(Long issueId)throws Exception;
+    Issue getIssueById(Long issueId)throws Exception;
 
-    List<Issue> getProjectByProjectId(Long projectId)throws Exception;
+    List<Issue> getIssueByProjectId(Long projectId)throws Exception;
 
-    Issue createIssue(IssueRequest issue,Long userId)throws UserException, IssueException, ProjectException;
+    Issue createIssue(IssueRequest issue, User user)throws Exception;
 
-    Optional<Issue> updateIssue(Long issueId,IssueRequest updatedIssue,Long userId)throws IssueException,UserException;
+    void deleteIssue(Long issueId, Long userId)throws Exception;
 
-    String deleteIssue(Long issueId, Long userId)throws UserException,IssueException;
+    Issue addUserToIssue(Long issueId, Long userId)throws Exception;
 
-    List<Issue> getIssuesByAssigneeId(Long assigneeId)throws IssueException;
-
-    List<Issue> searchIssues(String title,String status,String priority, Long assigneeId)throws IssueException;
-
-
-
-
-
-
-
-
-
+    Issue updateStatus(Long issueId,String status)throws Exception;
 
 }
