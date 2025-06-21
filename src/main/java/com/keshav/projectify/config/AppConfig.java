@@ -41,7 +41,7 @@ public class AppConfig {
                 "http://localhost:3000",
                 "http://localhost:5173",
                 "http://localhost:4200",
-                "https://thedevnest.vercel.app" // ✅ Replace with your actual Vercel frontend URL
+                "https://thedevnest.vercel.app"
             ));
             cfg.setAllowedMethods(Collections.singletonList("*"));
             cfg.setAllowedHeaders(Collections.singletonList("*"));
